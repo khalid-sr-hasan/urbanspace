@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Layout/Root";
-import ErrorPage from "../components/Error/ErrorPage";
-import Home from "../components/Home/Home";
+import ErrorPage from "../Pages/Error/ErrorPage";
+import Home from "../Pages/Home/Home";
 import Contact from "../components/Contact/Contact";
-import About from "../components/About/About";
-import Services from "../components/Services/Services";
-import HowWeWork from "../components/HowWeWork/HowWeWork";
-import Portfolio from "../components/Portfolio/Portfolio";
+import About from "../Pages/About/About";
+import Services from "../Pages/Services/Services";
+import HowWeWork from "../Pages/HowWeWork/HowWeWork";
+import Portfolio from "../Pages/Portfolio/Portfolio";
 import App from "../App";
 
 const router = createBrowserRouter([

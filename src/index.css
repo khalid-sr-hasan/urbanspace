@@ -6,3 +6,21 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+/* .rs-panel-btn {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+} */
+.rs-panel-btn:active,
+.rs-panel-btn:focus,
+.rs-panel-btn:hover {
+  background-color: transparent !important;
+}
+
+.rs-accordion-item:last-child {
+  border-bottom: 1px solid #e5e7eb !important;
+  /* Tailwind gray-200 */
+}
+
+.rs-panel-collapsible.rs-panel-header {
+  padding: 0 !important;
+}
