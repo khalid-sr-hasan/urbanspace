@@ -4,7 +4,23 @@ export default {
     theme: {
         extend: {
             animation: {
-                "spin-slow": "spin 5s linear infinite",
+                "spin-slow": "spin 5s linear infinite", // spin-slow class
+                wiggle: "wiggle 1s ease-in-out infinite",
+                shake: "shake 0.5s infinite",
+            },
+
+            keyframes: {
+                wiggle: {
+                    "0%, 100%": { transform: "rotate(-5deg)" },
+                    "50%": { transform: "rotate(5deg)" },
+                },
+                shake: {
+                    "0% ": { transform: "translateX(0)" },
+                    "25%": { transform: "translateX(-2px)" },
+                    "50% ": { transform: "translateX(2px)" },
+                    "75% ": { transform: "translateX(-2px)" },
+                    "100% ": { transform: "translateX(0)" },
+                },
             },
         },
     },
