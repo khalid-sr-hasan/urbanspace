@@ -15,7 +15,7 @@ const Banner = () => {
                     href="#_"
                     class="relative inline-flex items-center  justify-start px-8 py-3 overflow-hidden font-medium transition-all border border-green-500 bg-white rounded hover:bg-white group"
                 >
-                    <span class="absolute z-10 right-0 flex items-center justify-center w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease text-white">
+                    <span class="absolute z-10 right-0 flex items-center justify-center w-10 h-10 duration-500 transform translate-x-full group-hover:translate-x-0 ease text-white">
                         <svg
                             class="w-5 h-5"
                             fill="none"
@@ -32,9 +32,9 @@ const Banner = () => {
                             ></path>
                         </svg>
                     </span>
-                    <span class="w-48 h-48 rounded rotate-[-40deg] bg-[#233642] absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                    <span class="w-64 h-52 rounded rotate-[-40deg] bg-[#233642] absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
                     <span class="relative w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">
-                        Book A Meeting
+                        Get Free Consultancy
                     </span>
                 </a>
             </div>
