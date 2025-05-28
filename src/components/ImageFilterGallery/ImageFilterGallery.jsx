@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ImageFilterGallery = ({ items }) => {
     const [filter, setFilter] = useState("*");
-    const [order, setOrder] = useState("asc");
 
     // Memoize categories, only recompute when items change
     const categories = useMemo(() => {
@@ -13,23 +12,15 @@ const ImageFilterGallery = ({ items }) => {
         return ["*", ...unique];
     }, [items]);
 
-    // Memoize filtered and sorted items to avoid extra state and re-renders
+    // Memoize filtered items to avoid extra state and re-renders
     const filteredItems = useMemo(() => {
-        const filtered =
-            filter === "*"
-                ? items
-                : items.filter(({ category }) => category === filter);
-
-        return filtered
-            .slice()
-            .sort((a, b) =>
-                order === "asc" ? a.order - b.order : b.order - a.order
-            );
-    }, [items, filter, order]);
+        return filter === "*"
+            ? items
+            : items.filter(({ category }) => category === filter);
+    }, [items, filter]);
 
     // Memoized handlers to prevent re-creation on every render
     const handleFilterChange = useCallback((cat) => setFilter(cat), []);
-    const handleOrderChange = useCallback((ord) => setOrder(ord), []);
 
     return (
         <div className="p-6">
@@ -50,26 +41,6 @@ const ImageFilterGallery = ({ items }) => {
                             : cat.charAt(0).toUpperCase() + cat.slice(1)}
                     </button>
                 ))}
-                <button
-                    onClick={() => handleOrderChange("asc")}
-                    className={`px-4 py-2 rounded font-semibold transition duration-200 border ${
-                        order === "asc"
-                            ? "bg-green-600 text-white border-green-600"
-                            : "bg-white text-gray-800 hover:bg-green-100 border-gray-300"
-                    }`}
-                >
-                    Asc
-                </button>
-                <button
-                    onClick={() => handleOrderChange("desc")}
-                    className={`px-4 py-2 rounded font-semibold transition duration-200 border ${
-                        order === "desc"
-                            ? "bg-red-600 text-white border-red-600"
-                            : "bg-white text-gray-800 hover:bg-red-100 border-gray-300"
-                    }`}
-                >
-                    Desc
-                </button>
             </div>
 
             {/* Gallery */}
@@ -102,7 +73,7 @@ const ImageFilterGallery = ({ items }) => {
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full object-cover"
+                                    className="w-full h-64 object-cover"
                                     loading="lazy"
                                     draggable={false}
                                 />

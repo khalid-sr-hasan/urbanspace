@@ -7,45 +7,6 @@ import { BiBuildingHouse } from "react-icons/bi";
 
 import { motion } from "framer-motion";
 
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.3,
-        },
-    },
-};
-
-// Left images slide from left (x: -50), fade in
-const leftImageVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.6, ease: "easeOut" },
-    },
-};
-
-// Right images slide from right (x: 50), fade in
-const rightImageVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.6, ease: "easeOut" },
-    },
-};
-
-// Default fade+up for text and cards
-const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, ease: "easeOut" },
-    },
-};
-
 const ServicesSection = () => {
     const services = [
         {
@@ -65,31 +26,41 @@ const ServicesSection = () => {
 
     return (
         <section className="bg-[#F8F8F8]">
-            <div className="container mx-auto">
+            <div className="container mx-auto overflow-hidden">
                 <motion.div
                     className="grid gap-6 grid-cols-12"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                    variants={containerVariants}
+                    viewport={{ once: false, amount: 0.3 }} // Trigger animation when part of the section enters the viewport
+                    transition={{ staggerChildren: 0.3 }}
                 >
                     {/* left side */}
                     <motion.div className="col-span-12 lg:col-span-3">
-                        {/* Separate stagger for left images */}
                         <motion.div
-                            variants={containerVariants}
                             className="flex flex-col md:flex-row lg:flex-col justify-center items-center gap-6 md:justify-around"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.3 }}
+                            variants={{
+                                hidden: { opacity: 0, x: -50 },
+                                visible: {
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: {
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                    },
+                                },
+                            }}
                         >
-                            <motion.div variants={leftImageVariants}>
+                            <motion.div>
                                 <img
                                     src="https://xinterio-demo.pbminfotech.com/demo4/wp-content/uploads/sites/10/2024/09/frame-clock.png"
                                     alt="clock"
                                 />
                             </motion.div>
-                            <motion.div
-                                variants={leftImageVariants}
-                                className="lg:mt-28"
-                            >
+
+                            <motion.div className="lg:mt-28">
                                 <img
                                     className="rounded-3xl"
                                     src="https://xinterio-demo.pbminfotech.com/demo4/wp-content/uploads/sites/10/2024/09/home4-about-02.jpg"
@@ -101,10 +72,20 @@ const ServicesSection = () => {
 
                     {/* middle */}
                     <motion.div
-                        variants={containerVariants}
                         className="space-y-9 col-span-12 lg:col-span-5 text-center"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        variants={{
+                            hidden: { opacity: 0, y: 40 },
+                            visible: {
+                                opacity: 1,
+                                y: 0,
+                                transition: { duration: 0.6, ease: "easeOut" },
+                            },
+                        }}
                     >
-                        <motion.div variants={itemVariants}>
+                        <motion.div>
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
                                 Transforming dull spaces into Instagram-worthy
                                 masterpieces
@@ -118,13 +99,33 @@ const ServicesSection = () => {
 
                         <motion.div
                             className="grid gap-5 md:grid-cols-2"
-                            variants={containerVariants}
+                            variants={{
+                                hidden: {},
+                                visible: {
+                                    transition: {
+                                        staggerChildren: 0.3, // Delay for each item
+                                    },
+                                },
+                            }}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.3 }}
                         >
                             {services.map(({ icon, label }, idx) => (
                                 <motion.div
                                     key={idx}
                                     className="bg-white shadow-lg flex gap-4 items-center rounded-full border p-2 cursor-pointer hover:bg-blue-600 hover:border-blue-600 transition-colors duration-300"
-                                    variants={itemVariants}
+                                    variants={{
+                                        hidden: { opacity: 0, y: 40 },
+                                        visible: {
+                                            opacity: 1,
+                                            y: 0,
+                                            transition: {
+                                                duration: 0.6,
+                                                ease: "easeOut",
+                                            },
+                                        },
+                                    }}
                                     whileHover={{ scale: 1.05 }}
                                 >
                                     <span className="bg-[#F8F8F8] text-4xl p-3 rounded-full flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110">
@@ -138,8 +139,21 @@ const ServicesSection = () => {
                         </motion.div>
 
                         <motion.div
-                            variants={itemVariants}
                             className="flex flex-col items-center"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.3 }}
+                            variants={{
+                                hidden: { opacity: 0, x: 50 },
+                                visible: {
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: {
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                    },
+                                },
+                            }}
                         >
                             <img src={logo} alt="urbanspace" className="w-36" />
                             <p className="font-bold text-2xl text-[#1D3843]">
@@ -150,21 +164,47 @@ const ServicesSection = () => {
 
                     {/* right side */}
                     <motion.div className="col-span-12 lg:col-span-4">
-                        {/* Separate stagger for right images */}
                         <motion.div
-                            variants={containerVariants}
                             className="flex justify-end mb-10"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.3 }}
+                            variants={{
+                                hidden: { opacity: 0, x: 50 },
+                                visible: {
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: {
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                    },
+                                },
+                            }}
                         >
                             <motion.img
-                                variants={rightImageVariants}
                                 className="rounded-3xl"
                                 src="https://xinterio-demo.pbminfotech.com/demo4/wp-content/uploads/sites/10/2024/09/home4-about-01.jpg"
                                 alt="interior"
                             />
                         </motion.div>
-                        <motion.div variants={containerVariants}>
+
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.3 }}
+                            variants={{
+                                hidden: { opacity: 0, x: 50 },
+                                visible: {
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: {
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                    },
+                                },
+                            }}
+                        >
                             <motion.img
-                                variants={rightImageVariants}
                                 src="https://xinterio-demo.pbminfotech.com/demo4/wp-content/uploads/sites/10/2024/09/lamp.png"
                                 alt="lamp"
                             />
