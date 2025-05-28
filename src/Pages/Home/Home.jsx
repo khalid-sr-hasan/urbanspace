@@ -13,7 +13,7 @@ const Home = () => {
         {
             id: 1,
             title: "Modern Living Room",
-            category: "interior-design",
+            category: "Living Room",
             order: 1,
             image: "https://i0.wp.com/archconceptbd.com/wp-content/uploads/2023/06/VIEW-03.jpg",
         },

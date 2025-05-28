@@ -144,7 +144,7 @@ const ServicesSection = () => {
                             whileInView="visible"
                             viewport={{ once: false, amount: 0.3 }}
                             variants={{
-                                hidden: { opacity: 0, x: 50 },
+                                hidden: { opacity: 0, x: -50 },
                                 visible: {
                                     opacity: 1,
                                     x: 0,
