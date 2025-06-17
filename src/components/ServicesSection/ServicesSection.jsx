@@ -1,11 +1,11 @@
+"use client";
 import React from "react";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
-import logo from "/Urban Space  (3).png";
 import { LuHardHat } from "react-icons/lu";
 import { GiHomeGarage } from "react-icons/gi";
 import { BiBuildingHouse } from "react-icons/bi";
-
 import { motion } from "framer-motion";
+import logo from "/Urban Space  (3).png";
 
 const ServicesSection = () => {
     const services = [
@@ -31,7 +31,7 @@ const ServicesSection = () => {
                     className="grid gap-6 grid-cols-12"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.3 }} // Trigger animation when part of the section enters the viewport
+                    viewport={{ once: true, amount: 0.3 }} // ✅ animate only once
                     transition={{ staggerChildren: 0.3 }}
                 >
                     {/* left side */}
@@ -40,7 +40,7 @@ const ServicesSection = () => {
                             className="flex flex-col md:flex-row lg:flex-col justify-center items-center gap-6 md:justify-around"
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: false, amount: 0.3 }}
+                            viewport={{ once: true, amount: 0.3 }} // ✅
                             variants={{
                                 hidden: { opacity: 0, x: -50 },
                                 visible: {
@@ -75,7 +75,7 @@ const ServicesSection = () => {
                         className="space-y-9 col-span-12 lg:col-span-5 text-center"
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.3 }}
+                        viewport={{ once: true, amount: 0.3 }} // ✅
                         variants={{
                             hidden: { opacity: 0, y: 40 },
                             visible: {
@@ -102,14 +102,12 @@ const ServicesSection = () => {
                             variants={{
                                 hidden: {},
                                 visible: {
-                                    transition: {
-                                        staggerChildren: 0.3, // Delay for each item
-                                    },
+                                    transition: { staggerChildren: 0.3 },
                                 },
                             }}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: false, amount: 0.3 }}
+                            viewport={{ once: true, amount: 0.3 }} // ✅
                         >
                             {services.map(({ icon, label }, idx) => (
                                 <motion.div
@@ -142,7 +140,7 @@ const ServicesSection = () => {
                             className="flex flex-col items-center"
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: false, amount: 0.3 }}
+                            viewport={{ once: true, amount: 0.3 }} // ✅
                             variants={{
                                 hidden: { opacity: 0, x: -50 },
                                 visible: {
@@ -168,7 +166,7 @@ const ServicesSection = () => {
                             className="flex justify-end mb-10"
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: false, amount: 0.3 }}
+                            viewport={{ once: true, amount: 0.3 }} // ✅
                             variants={{
                                 hidden: { opacity: 0, x: 50 },
                                 visible: {
@@ -191,7 +189,7 @@ const ServicesSection = () => {
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: false, amount: 0.3 }}
+                            viewport={{ once: true, amount: 0.3 }} // ✅
                             variants={{
                                 hidden: { opacity: 0, x: 50 },
                                 visible: {

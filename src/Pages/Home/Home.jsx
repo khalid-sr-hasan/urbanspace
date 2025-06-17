@@ -5,6 +5,7 @@ import Nav from "../../components/Header/Nav/Nav";
 import Banner from "../../components/Banner/Banner";
 import ServicesSection from "../../components/ServicesSection/ServicesSection";
 import ImageFilterGallery from "../../components/ImageFilterGallery/ImageFilterGallery";
+import AboutSection from "../../components/AboutSection/AboutSection";
 
 const Home = () => {
     // const cardItem = [1, 2, 3];
@@ -222,10 +223,11 @@ const Home = () => {
                     ))}
                 </div> */}
             </div>
-            <WorkingProcess />
 
             <ServicesSection />
+            <AboutSection />
             <ImageFilterGallery items={sampleItems} />
+            <WorkingProcess />
         </div>
     );
 };
