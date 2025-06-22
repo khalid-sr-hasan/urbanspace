@@ -1,94 +1,126 @@
+import { BsArrowRight, BsArrowUpRight } from "react-icons/bs";
+import "./AboutSection.css";
+import { BiCheckCircle, BiPhone } from "react-icons/bi";
+
 const AboutSection = () => {
     return (
-        <div className="py-28">
-            <div className="text-center">
-                <h2>ABOUT US</h2>
-            </div>
-            <div className="container mx-auto">
-                <div className="flex flex-wrap mt-10">
-                    <div className="w-full lg:w-1/2 relative border">
-                        <div className="w-[80%]">
-                            <img
-                                className="lg:w-full"
-                                src="https://html.awaikenthemes.com/inspaire/images/about-img-1.jpg"
-                                alt=""
-                            />
-                            <div className="absolute right-0 lg:right-10 -bottom-24 ">
-                                <img
-                                    className="w-[250px] md:w-[380px]"
-                                    src="https://html.awaikenthemes.com/inspaire/images/about-img-2.jpg"
-                                    alt=""
-                                />
+        <div className="py-14">
+            <div className="container mx-auto px-4 md:px-0">
+                <div className="about-iner">
+                    {/* about section left side start */}
+                    <div className="about-left">
+                        <img
+                            className="about-img-1"
+                            src="https://html.awaikenthemes.com/inspaire/images/about-img-1.jpg"
+                            alt="About Image 1"
+                        />
+                        <img
+                            className="about-img-2"
+                            src="https://html.awaikenthemes.com/inspaire/images/about-img-2.jpg"
+                            alt="About Image 2"
+                        />
+                        <img
+                            className="about-img-3"
+                            src="https://html.awaikenthemes.com/inspaire/images/about-us-bg-shape.svg"
+                            alt="About Image 3"
+                        />
+                        <div className="about-feedback-counter">
+                            <div className="about-feedback-circle">95%</div>
+                            <div className="about-feedback-text">
+                                Positive Feedback
                             </div>
                         </div>
-                        <div
-                            className="absolute  -top-11 -right-2 md:top-0 md:right-0 lg:top-0 lg:right-10"
-                            style={{
-                                transform:
-                                    "rotate(-180deg) translate(20px, -10px)",
-                                writingMode: "vertical-rl",
-                            }}
-                        >
-                            <h5 className="flex items-center justify-center gap-2">
-                                <span className="w-16 h-16 flex items-center justify-center border-[5px] border-white bg-[#233642] text-white rounded-full font-semibold">
-                                    95%
-                                </span>{" "}
-                                <span className="font-semibold">
-                                    positive feedback
-                                </span>
-                            </h5>
-                        </div>
                     </div>
+                    {/* about section left side end */}
 
-                    <div className="w-full lg:w-1/2">
-                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-                            Our passion for design,
-                            <span className="text-[#233642]">
-                                your vision realized
-                            </span>
-                        </h3>
-                        <p className="text-base mt-6">
-                            Our dedicated team of designers works closely with
-                            you to understand your vision and bring it to life
-                            with thoughtful attention to detail. Whether it's
-                            transforming a single room or an entire home.
-                        </p>
-                        <div className="mt-6">
-                            <ul>
-                                <li>creative expertise</li>
-                                <li>client-centered approach</li>
-                            </ul>
+                    {/* about section right side start */}
+                    <div className="about-right">
+                        {/* decorative faint blueprint on the left (optional) */}
+                        <div className="absolute inset-y-0 left-0 w-1/2 pointer-events-none opacity-5 bg-[url('/blueprint.png')] bg-left bg-no-repeat bg-contain" />
+
+                        <div className="mt-10 md:mt-14">
+                            {/* LEFT COLUMN */}
+                            <div>
+                                {/* Label */}
+                                <div className="flex items-center space-x-2 mb-6">
+                                    <BsArrowUpRight className="w-5 h-5 text-gray-500" />
+                                    <span className="uppercase tracking-wider text-sm text-gray-500 font-medium">
+                                        About Us
+                                    </span>
+                                </div>
+
+                                {/* Heading */}
+                                <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
+                                    Our passion for design, your vision realized
+                                </h2>
+
+                                {/* Description */}
+                                <p className="mt-6 text-gray-600 max-w-xl">
+                                    Our dedicated team of designers works
+                                    closely with you to understand your vision
+                                    and bring it to life with thoughtful
+                                    attention to detail. Whether it's
+                                    transforming a single room or an entire
+                                    home.
+                                </p>
+
+                                {/* Bullet list */}
+                                <ul className="mt-8 space-y-3">
+                                    <li className="flex items-center">
+                                        <BiCheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                                        <span className="text-gray-700">
+                                            creative expertise
+                                        </span>
+                                    </li>
+                                    <li className="flex items-center">
+                                        <BiCheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                                        <span className="text-gray-700">
+                                            client‑centered approach
+                                        </span>
+                                    </li>
+                                </ul>
+
+                                {/* CTA Button */}
+                                <button className="mt-10 inline-flex items-center bg-gray-700 hover:bg-gray-800 text-white text-sm font-medium px-6 py-3 rounded transition">
+                                    Read More
+                                    <BsArrowRight className="w-4 h-4 ml-2" />
+                                </button>
+                            </div>
+
+                            {/* RIGHT COLUMN */}
                         </div>
                     </div>
+                    {/* about section right side end */}
                 </div>
             </div>
 
-            {/* why */}
+            {/* why choose us */}
 
-            <div className="container mx-auto px-4 py-20">
-                {/* Optional Center Label */}
-                <div className="text-center mb-16">
-                    <p className="text-sm text-gray-400 flex justify-center items-center gap-2 mb-3">
-                        <span className="w-4 h-px bg-gray-400"></span>
-                        Why Choose Us
-                    </p>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                        A behind the scenes look <br />
-                        at{" "}
-                        <span className="text-gray-600 font-bold">
-                            our agency
-                        </span>
-                    </h2>
-                    <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
-                        From concept to completion, discover how we bring your
-                        vision to life with innovation, collaboration, and
-                        expert craftsmanship.
-                    </p>
-                </div>
-
+            <div className="container mt-14 mx-auto px-4 py-20">
                 <div className="flex flex-col lg:flex-row gap-12">
                     {/* Left Content */}
                     <div className="w-full lg:w-1/2">
+                        {/* Optional Center Label */}
+                        <div className="flex items-center space-x-2 mb-6">
+                            <BsArrowUpRight className="w-5 h-5 text-gray-500" />
+                            <span className="uppercase tracking-wider text-sm text-gray-500 font-medium">
+                                Why Choose Us
+                            </span>
+                        </div>
+                        <div className="mb-16">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                                A behind the scenes look <br />
+                                at{" "}
+                                <span className="text-gray-600 font-bold">
+                                    our agency
+                                </span>
+                            </h2>
+                            <p className="text-gray-600 mt-6 max-w-2xl">
+                                From concept to completion, discover how we
+                                bring your vision to life with innovation,
+                                collaboration, and expert craftsmanship.
+                            </p>
+                        </div>
                         <div className="space-y-10">
                             {/* Feature 1 */}
                             <div className="flex items-start gap-5">
@@ -145,33 +177,29 @@ const AboutSection = () => {
 
                     {/* Right Grid Images */}
                     <div className="w-full lg:w-1/2">
-                        <div className="grid grid-cols-12 grid-rows-10 gap-3">
-                            <div className="col-span-12 sm:col-span-7 row-span-4">
+                        <div className="w-full choose-us-image-gallery">
+                            <div className="choose-us-img-1">
                                 <img
-                                    className="w-full h-full object-cover"
                                     src="https://html.awaikenthemes.com/inspaire/images/why-choose-img-1.jpg"
-                                    alt=""
+                                    alt="Choose Us Image 1"
                                 />
                             </div>
-                            <div className="col-span-12 sm:col-span-5 row-span-4 sm:col-start-8">
+                            <div className="choose-us-img-2">
                                 <img
-                                    className="w-full h-full object-cover"
                                     src="https://html.awaikenthemes.com/inspaire/images/why-choose-img-2.jpg"
-                                    alt=""
+                                    alt="Choose Us Image 2"
                                 />
                             </div>
-                            <div className="col-span-12 sm:col-span-9 row-span-4 sm:row-start-5">
+                            <div className="choose-us-img-3">
                                 <img
-                                    className="w-full h-full object-cover"
                                     src="https://html.awaikenthemes.com/inspaire/images/why-choose-img-3.jpg"
-                                    alt=""
+                                    alt="Choose Us Image 3"
                                 />
                             </div>
-                            <div className="col-span-12 sm:col-span-3 row-span-4 sm:col-start-10 sm:row-start-5">
+                            <div className="choose-us-img-4">
                                 <img
-                                    className="w-full h-full object-cover"
                                     src="https://html.awaikenthemes.com/inspaire/images/why-choose-img-4.jpg"
-                                    alt=""
+                                    alt="Choose Us Image 4"
                                 />
                             </div>
                         </div>

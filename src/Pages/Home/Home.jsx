@@ -6,6 +6,7 @@ import Banner from "../../components/Banner/Banner";
 import ServicesSection from "../../components/ServicesSection/ServicesSection";
 import ImageFilterGallery from "../../components/ImageFilterGallery/ImageFilterGallery";
 import AboutSection from "../../components/AboutSection/AboutSection";
+import OurServicesSection from "../../components/OurServicesSection/OurServicesSection";
 
 const Home = () => {
     // const cardItem = [1, 2, 3];
@@ -226,7 +227,8 @@ const Home = () => {
 
             <ServicesSection />
             <AboutSection />
-            <ImageFilterGallery items={sampleItems} />
+            <OurServicesSection />
+            {/* <ImageFilterGallery items={sampleItems} /> */}
             <WorkingProcess />
         </div>
     );

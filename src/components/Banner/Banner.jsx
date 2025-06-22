@@ -5,7 +5,7 @@ const Banner = () => {
         <section className="relative z-0 w-full h-screen bg-cover bg-center bg-[url('/urbanSpaceBanner.jpg')] flex items-center justify-center px-4 md:px-16">
             <div className=" p-6 rounded-lg text-center max-w-6xl">
                 <h1 className="text-white text-3xl md:text-7xl font-bold mb-4">
-                    Welcome to UrbanSpace
+                    Designing your dream spaces, one room at a time
                 </h1>
                 <p className="text-gray-200 text-base md:text-lg mb-6">
                     Discover creative interiors that redefine living. Let’s
