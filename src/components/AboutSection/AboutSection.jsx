@@ -96,7 +96,7 @@ const AboutSection = () => {
 
             {/* why choose us */}
 
-            <div className="container mt-14 mx-auto px-4 py-20">
+            <div className="container mt-14 mx-auto px-4 ">
                 <div className="flex flex-col lg:flex-row gap-12">
                     {/* Left Content */}
                     <div className="w-full lg:w-1/2">
