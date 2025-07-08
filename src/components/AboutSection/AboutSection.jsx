@@ -125,7 +125,10 @@ const AboutSection = () => {
                             {/* Feature 1 */}
                             <div className="flex items-start gap-5">
                                 <div className="bg-gray-100 p-4 rounded-full text-gray-800 text-xl">
-                                    {/* icon */}
+                                    <img
+                                        src="https://html.awaikenthemes.com/inspaire/images/icon-why-choose-1.svg"
+                                        alt=""
+                                    />
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-lg mb-1">
@@ -142,7 +145,10 @@ const AboutSection = () => {
                             {/* Feature 2 */}
                             <div className="flex items-start gap-5 border-t border-gray-200 pt-6">
                                 <div className="bg-gray-100 p-4 rounded-full text-gray-800 text-xl">
-                                    {/* icon */}
+                                    <img
+                                        src="https://html.awaikenthemes.com/inspaire/images/icon-why-choose-2.svg"
+                                        alt=""
+                                    />
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-lg mb-1">
@@ -159,7 +165,10 @@ const AboutSection = () => {
                             {/* Feature 3 */}
                             <div className="flex items-start gap-5 border-t border-gray-200 pt-6">
                                 <div className="bg-gray-100 p-4 rounded-full text-gray-800 text-xl">
-                                    {/* icon */}
+                                    <img
+                                        src="https://html.awaikenthemes.com/inspaire/images/icon-why-choose-3.svg"
+                                        alt=""
+                                    />
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-lg mb-1">

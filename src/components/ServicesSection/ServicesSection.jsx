@@ -112,7 +112,7 @@ const ServicesSection = () => {
                             {services.map(({ icon, label }, idx) => (
                                 <motion.div
                                     key={idx}
-                                    className="bg-white shadow-lg flex gap-4 items-center rounded-full border p-2 cursor-pointer hover:bg-blue-600 hover:border-blue-600 transition-colors duration-300"
+                                    className="bg-white shadow-lg flex gap-4 items-center rounded-full border p-2 cursor-pointer transition-colors duration-300"
                                     variants={{
                                         hidden: { opacity: 0, y: 40 },
                                         visible: {
@@ -129,7 +129,7 @@ const ServicesSection = () => {
                                     <span className="bg-[#F8F8F8] text-4xl p-3 rounded-full flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110">
                                         {icon}
                                     </span>
-                                    <p className="text-[18px] font-bold transition-colors duration-300 ease-in-out hover:text-white">
+                                    <p className="text-[18px] font-bold transition-colors duration-300 ease-in-out ">
                                         {label}
                                     </p>
                                 </motion.div>

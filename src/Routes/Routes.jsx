@@ -12,35 +12,31 @@ import App from "../App";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
-    },
-    {
-        path: "/main",
         element: <Root />,
         errorElement: <ErrorPage />,
         children: [
             {
-                path: "/main/home",
+                path: "/home",
                 element: <Home />,
             },
             {
-                path: "/main/services",
+                path: "services",
                 element: <Services />,
             },
             {
-                path: "/main/about",
+                path: "/about",
                 element: <About />,
             },
             {
-                path: "/main/contact",
+                path: "/contact",
                 element: <Contact />,
             },
             {
-                path: "/main/how-we-work",
+                path: "/how-we-work",
                 element: <HowWeWork />,
             },
             {
-                path: "/main/portfolio",
+                path: "/portfolio",
                 element: <Portfolio />,
             },
         ],
